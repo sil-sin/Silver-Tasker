@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>KRONOS Task Manager</title>
+   <link href='images/favicon.ico' rel="shortcut icon" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+   <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <div class="container"></div>
+   <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand nav-link active" aria-current="page" href="/">Home</a>
+      {{#if user}}
+      <a class="navbar-brand nav-link active" aria-current="page" href="/manager">Profile</a>
+      <a class="navbar-brand nav-link active" aria-current="page" href="/logout">Logout</a>
+      {{/if}}
+   </nav>
+  
+      {{{body}}}
+   </div>
+
+   <script src="/js/script.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

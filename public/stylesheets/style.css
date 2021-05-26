@@ -1,0 +1,282 @@
+/* colors-layout: gold: #a88b17, navy: #03001a  */
+
+@font-face {
+  font-family: Phosphate;
+  src: url("/fonts/PhosphatePro-Inline.otf");
+}
+
+body {
+  margin-top: 49px;
+  padding-top: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #03001a;
+  background-repeat: no-repeat;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: rgb(173, 132, 26);
+  text-align: center;
+}
+/* 404 style */
+.err,
+.err2 {
+  color: #ffffff;
+  font-size: 11rem;
+  position: absolute;
+  left: 20%;
+  top: 8%;
+}
+.far {
+  position: absolute;
+  font-size: 8.5rem;
+  left: 42%;
+  top: 15%;
+  color: #ffffff;
+}
+
+.err2 {
+  left: 68%;
+}
+
+.msg {
+  color: aliceblue;
+  text-align: center;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+  position: absolute;
+  left: 16%;
+  top: 45%;
+  width: 75%;
+}
+/* ==================================== */
+p {
+  color: white;
+}
+.allTasks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #1c1c57b2;
+  padding-top: 20px;
+}
+.form,
+.form-label {
+  color: rgb(187, 154, 5);
+  font-weight: bolder;
+  width: 500px;
+  margin: 10px;
+}
+.selector {
+  width: 500px;
+  margin: 10px;
+}
+.taskList {
+  width: 400px;
+}
+nav {
+  z-index: 500;
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+}
+
+.main2 {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0 30px 0;
+}
+.infobox {
+  white-space: pre-wrap;
+  background-color: #1c1c57b2;
+  width: 600px;
+  padding: 15px;
+  margin: 30px;
+}
+.taskmaker {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  background: #1c1c57b2;
+  width: 600px;
+  padding: 15px;
+}
+.section1 {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.login {
+  background: #1c1c57b2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 500px;
+  color: goldenrod;
+}
+.loginform {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* @media screen and (min-width: 480px) {
+  form {
+    max-width: 480px;
+  }
+} */
+
+/*!!! main.hbs css*/
+
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i");
+
+.header {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 50vw;
+  min-height: 400px;
+  max-height: 550px;
+  min-width: 300px;
+  color: #eee;
+}
+.header:after {
+  content: "";
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(27, 32, 48, 1) 100%
+  );
+}
+.header:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transform: translateZ(0);
+  /*background:#1B2030 url(https://unsplash.it/1999/999?image=1063) top center no-repeat;
+  */
+  background: #1b2030 url("/images/nippon1.jpeg") top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: grow 60s linear 10ms infinite;
+  transition: all 0.2s ease-in-out;
+  z-index: -2;
+}
+.header a {
+  color: #eee;
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  border: 2px solid #fff;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 1.2em;
+  box-sizing: border-box;
+}
+.sides,
+.info {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.info {
+  width: 100%;
+  padding: 15% 10% 0 10%;
+  text-align: center;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.info h4,
+.meta {
+  font-size: 0.7em;
+}
+.meta2 {
+  color: white;
+  font-style: italic;
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.5);
+  }
+}
+.content {
+  padding: 5% 10%;
+  text-align: justify;
+}
+.btn {
+  color: #333;
+  border: 2px solid;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.card-title {
+  margin-top: -20px;
+  background: #03001a;
+}
+.infogoals {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.main-title {
+  font-family: Phosphate;
+  font-size: 70px;
+  color: white;
+  text-align: center;
+}
+
+.myBtn {
+  background-color: goldenrod;
+  font-weight: bolder;
+  border-radius: 10px;
+  border: unset;
+  color: #03001a;
+  padding: 15px 25px;
+}
+.form-check-label {
+  color: #eee;
+  text-decoration: none;
+}
+@media (max-width: 420px) {
+  body {
+    width: 400px !important;
+    height: 100%;
+    font-size: 12px;
+  }
+}

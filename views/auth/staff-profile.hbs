@@ -1,0 +1,133 @@
+<h1> Welcome {{user.username}}</h1>
+
+<div class="allTasks container-fluid">
+  {{#if isTodo}}
+  <div class="taskList">
+    <h3>To Do</h3>
+    {{#each todo}}
+    <div class="dropdown" style="width: 400px; margin: 10px;">
+      <button style="border: solid red;"
+        class="list-group-item list-group-item-action list-group-item-dark dropdown-toggle" type="button"
+        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Task:{{this.title}} <br>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title"><b>{{this.title}} </b> </h4>
+              <p class="card-text">
+              <h6> <b>Description:</b> {{this.description}} <br></h6>
+              </p>
+              <div class="mb-3">
+                <form action="/staff/{{this.id}}" method="POST">
+                  <label>Status </label> <br>
+                  <input class="form-check-input" type="radio" name="status" value="Todo" checked>
+                  <label class="form-check-label" style="color: black;" for="Todo">To Do</label>
+                  <input class="form-check-input" type="radio" name="status" value="In Progres">
+                  <label class="form-check-label" style="color: black;" for="In Progress">In Progres</label>
+                  <input class="form-check-input" type="radio" name="status" value="Done">
+                  <label class="form-check-label" style="color: black;" for="Done">Done</label>
+              </div>
+            </div>
+            <button style="padding: 5px; background:goldenrod;font-weight: bolder;" class="myBtn"
+              type="submit">Update</button>
+          </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="taskList">
+    <h3>To Do</h3>
+  </div>
+  {{/if }}
+  {{#if isInProgres}}
+  <div class="taskList">
+    <h3>In Progres</h3>
+    {{#each pending}}
+    <div class="dropdown" style="width: 400px; margin: 10px">
+      <button style="border: solid blue;"
+        class="list-group-item list-group-item-action list-group-item-dark dropdown-toggle" type="button"
+        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Task:{{this.title}}<br>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title"><b>{{this.title}} </b> </h4>
+              <p class="card-text">
+              <h6> <b>Description:</b> {{this.description}} <br></h6>
+              </p>
+              <div class="mb-3">
+                <form action="/staff/{{this.id}}" method="POST">
+                  <label>Status </label> <br>
+                  <input class="form-check-input" type="radio" name="status" value="Todo" checked>
+                  <label class="form-check-label" style="color: black;" for="Todo">To Do</label>
+                  <input class="form-check-input" type="radio" name="status" value="In Progres">
+                  <label class="form-check-label" style="color: black;" for="In Progress">In Progres</label>
+                  <input class="form-check-input" type="radio" name="status" value="Done">
+                  <label class="form-check-label" style="color: black;" for="Done">Done</label>
+              </div>
+            </div>
+            <button style="padding: 5px; background:goldenrod;font-weight: bolder;" class="myBtn"
+              type="submit">Update</button>
+          </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="taskList">
+    <h3>In Progres</h3>
+  </div>
+  {{/if }}
+  {{#if isDone}}
+  <div class="taskList">
+    <h3>Done</h3>
+    {{#each doneTasks}}
+    <div class="dropdown" style="width: 400px; margin: 10px">
+      <button style="border: solid green;"
+        class="list-group-item list-group-item-action list-group-item-dark dropdown-toggle" type="button"
+        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Task:{{this.title}} <br>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title"><b>{{this.title}} </b> </h4>
+              <p class="card-text">
+              <h6> <b>Description:</b> {{this.description}} <br></h6>
+              </p>
+              <div class="mb-3">
+                <form action="/staff/{{this.id}}" method="POST">
+                  <label>Status </label> <br>
+                  <input class="form-check-input" type="radio" name="status" value="Todo" checked>
+                  <label class="form-check-label" style="color: black;" for="Todo">To Do</label>
+                  <input class="form-check-input" type="radio" name="status" value="In Progres">
+                  <label class="form-check-label" style="color: black;" for="In Progress">In Progres</label>
+                  <input class="form-check-input" type="radio" name="status" value="Done">
+                  <label class="form-check-label" style="color: black;" for="Done">Done</label>
+              </div>
+            </div>
+            <button style="padding: 5px; background:goldenrod;font-weight: bolder;" class="myBtn"
+              type="submit">Update</button>
+          </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="taskList">
+    <h3>Done</h3>
+  </div>
+  {{/if }}
+</div>

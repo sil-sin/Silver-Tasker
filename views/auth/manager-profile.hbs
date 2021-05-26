@@ -1,0 +1,116 @@
+<h1> Welcome {{user.username}}</h1>
+<div class="section1 " style="margin-top: 0; display:inline; margin-left: 60px">
+  <a href="/new-task" class="myBtn" type="submit">Create Task</a>
+  <a href="/info&goals" class="myBtn" type="submit">Update Info &
+    Goals</a>
+</div>
+<div class="allTasks container-fluid">
+  {{#if isTodo}}
+  <div class="taskList">
+    <h3>To Do</h3>
+    {{#each todo}}
+    <div class="dropdown" style="width: 400px; margin: 10px">
+      <button style="border:solid red"
+        class="list-group-item list-group-item-action list-group-item-dark dropdown-toggle" type="button"
+        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Task:{{this.title}} <br>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title"><b>{{this.title}} </b> </h4>
+              <p class="card-text">
+              <h6><b>Description:</b> {{this.description}} <br></h6>
+              </p>
+              <div class="loginform">
+                <a style="padding: 5px; background:goldenrod;font-weight: bolder;" class="myBtn"
+                  href="/tasks/{{this.id}}/edit">Update</a>
+                <a style="padding: 5px; color: white ; background:rgb(218, 32, 32);font-weight: bolder;" class="myBtn"
+                  href="/tasks/{{this.id}}/delete">Delete</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="taskList">
+    <h3>To Do</h3>
+  </div>
+  {{/if }}
+  {{#if isInProgres}}
+  <div class="taskList">
+    <h3>In Progres</h3>
+    {{#each pending}}
+    <div class="dropdown" style="width: 400px; margin: 10px">
+      <button style="border:solid blue"
+        class="list-group-item list-group-item-action list-group-item-dark dropdown-toggle" type="button"
+        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Task:{{this.title}}<br>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title"><b>{{this.title}} </b> </h4>
+              <p class="card-text">
+              <h6><b>Description:</b> {{this.description}} <br></h6>
+              </p>
+              <div class="loginform">
+                <a style="padding: 5px; background:goldenrod;font-weight: bolder;" class="myBtn"
+                  href="/tasks/{{this.id}}/edit">Update</a>
+                <a style="padding: 5px; color: white ; background:rgb(218, 32, 32);font-weight: bolder;" class="myBtn"
+                  href="/tasks/{{this.id}}/delete">Delete</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="taskList">
+    <h3>In Progres</h3>
+  </div>
+  {{/if }}
+  {{#if isDone}}
+  <div class="taskList">
+    <h3>Done</h3>
+    {{#each doneTasks}}
+    <div class="dropdown" style="width: 400px; margin: 10px">
+      <button style="border:solid green"
+        class="list-group-item list-group-item-action list-group-item-dark dropdown-toggle" type="button"
+        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Task:{{this.title}} <br>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h4 class="card-title"><b>{{this.title}} </b> </h4>
+              <p class="card-text">
+              <h6> <b>Description:</b> {{this.description}} <br></h6>
+              </p>
+              <div class="loginform">
+                <a style="padding: 5px; background:goldenrod;font-weight: bolder;" class="myBtn"
+                  href="/tasks/{{this.id}}/edit">Update</a>
+                <a style="padding: 5px; color: white ; background:rgb(218, 32, 32);font-weight: bolder;" class="myBtn"
+                  href="/tasks/{{this.id}}/delete">Delete</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <div class="taskList">
+    <h3>Done</h3>
+  </div>
+  {{/if }}
+</div>
