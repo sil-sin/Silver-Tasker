@@ -3,6 +3,8 @@ const bcrypt = require("bcryptjs");
 const UserModel = require("../models/User.model");
 const TaskModel = require("../models/Task.model");
 const InfoGoals = require("../models/InfoGoals.model")
+const QuoteModel = require('../models/Quote.model')
+const axios = require('axios')
 // !!!Manager = Admin, User = Staff
 let manager = false;
 let staff = false;
@@ -77,13 +79,18 @@ const userType = (req, res, next) => {
 }
 router.get("/main", userType, (req, res, next) => {
   let user = req.session.loggedInUser;
-  InfoGoals.find()
-    .then((data) => {
-      console.log(data)
-      res.render("auth/main.hbs", { manager, staff, user, data })
-    }).catch((err) => {
-
-    });;
+  axios.get('https://type.fit/api/quotes').then(resp => {
+    let random = Math.floor(Math.random() * resp.data.length)
+    let quoteText = resp.data[random].text
+    let author = resp.data[random].author
+    InfoGoals.find()
+      .then((data) => {
+        console.log(data)
+        res.render("auth/main.hbs", { manager, staff, user, data, quoteText, author })
+      }).catch((err) => {
+        next(err)
+      });;
+  });
 });
 router.post('/main', (req, res) => {
   const { info, goals } = req.body
@@ -99,6 +106,9 @@ router.get('/info&goals', (req, res) => {
   InfoGoals.collection.drop()
 
 })
+
+// quote fetch
+
 
 router.get("/staff", (req, res) => {
   const { id } = req.params
@@ -212,6 +222,7 @@ router.get("/logout", (req, res, next) => {
   req.session.destroy();
   res.redirect("/");
 });
+
 
 // !change password?
 

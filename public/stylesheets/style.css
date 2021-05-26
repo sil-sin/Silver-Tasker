@@ -67,15 +67,18 @@ p {
 .form-label {
   color: rgb(187, 154, 5);
   font-weight: bolder;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   margin: 10px;
 }
 .selector {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   margin: 10px;
 }
 .taskList {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
 }
 nav {
   z-index: 500;
@@ -92,7 +95,7 @@ nav {
 .infobox {
   white-space: pre-wrap;
   background-color: #1c1c57b2;
-  width: 600px;
+  max-width: 600px;
   padding: 15px;
   margin: 30px;
 }
@@ -103,13 +106,15 @@ nav {
   align-items: center;
   margin: 10px;
   background: #1c1c57b2;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   padding: 15px;
 }
 .section1 {
   margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap !important;
 }
 .login {
   background: #1c1c57b2;
