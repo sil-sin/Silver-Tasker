@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:adamgibbons/ics
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:ea72991c-f251-4a2f-af21-38aa5cd90ea4
+SUMMARY:Crowdcast: Closing the Gap - from Tech Recruiters to Jobseekers 🚀
+DTSTAMP:20210526T231000Z
+DTSTART:20210527T161500Z
+URL:https://www.crowdcast.io/e/closing-the-gap---from/1
+LOCATION:https://www.crowdcast.io/e/closing-the-gap---from/1
+DURATION:PT1H
+END:VEVENT
+END:VCALENDAR

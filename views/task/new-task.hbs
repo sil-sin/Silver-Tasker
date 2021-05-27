@@ -1,31 +1,45 @@
 <div style="margin-top: 0;" class="section1">
-  <div class="taskmaker">
-    <form class="taskmaker" style="background: transparent;" action="/new-task" method="POST">
+  <div class="formControl">
+    <form
+      class="taskmaker"
+      style="background: transparent;"
+      action="/new-task"
+      method="POST"
+    >
       <h3>Create a new task</h3>
       <div class="form">
         <label class="form-label">Title</label>
-        <input type="text" class="form-control" name="title">
+        <input type="text" class="form-control" name="title" />
       </div>
       <div class="mb-3 form">
         <label class="form-label">Description</label>
-        <input type="text" class="form-control" name="description">
+        <input type="text" class="form-control" name="description" />
       </div>
       <div class="mb-3 form">
         <label class="form-label" for="department">Department</label>
       </div>
-      <select class="form-select selector" name="department" aria-label="Default select example">
+      <select
+        class="form-select selector"
+        name="department"
+        aria-label="Default select example"
+      >
         <option value="disabled " disabled>Choose Department</option>
         {{#each departments}}
-        <option value="{{this}}">{{this}}</option>
+          <option value="{{this}}">{{this}}</option>
         {{/each}}
       </select>
       <div class="mb-3 form">
         <label class="form-label" for="asignedTo">Assign To:</label>
       </div>
-      <select class="form-select selector" id="inputGroupSelect01" name="asignedTo" aria-label="Default select example">
+      <select
+        class="form-select selector"
+        id="inputGroupSelect01"
+        name="asignedTo"
+        aria-label="Default select example"
+      >
         <option value="disabled " disabled>Asign the task to</option>
         {{#each data}}
-        <option value="{{this.id}}">{{this.username}}</option>
+          <option value="{{this.id}}">{{this.username}}</option>
         {{/each}}
       </select>
       <button type="submit" class="myBtn">Create</button>
@@ -34,8 +48,8 @@
   </div>
 </div>
 {{#if msg}}
-<br>
-<div class="alert alert-danger" role="alert">
-  {{msg}}
-</div>
+  <br />
+  <div class="alert alert-danger" role="alert">
+    {{msg}}
+  </div>
 {{/if}}

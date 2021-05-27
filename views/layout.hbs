@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <div class="container"></div>
+   <div>
+      
    <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand nav-link active" aria-current="page" href="/">Home</a>
       {{#if user}}
@@ -23,8 +24,16 @@
    </nav>
   
       {{{body}}}
+    
    </div>
-
+  <footer class="navbar fixed-bottom navbar-dark bg-dark">
+  <div class="container-fluid"></div>
+    <span class="navbar-brand">Created by <a  href="http://github.com/sil-sin">Silvi Sinanaj</a>
+    and  <a  href="https://github.com/BFTorres">Bernardo Fonseca Torres  </a></span>
+    <span class="navbar-brand">This is my reimagined version of <a href='http://kronos-tms.herokuapp.com/'>Kronos</a></span>
+  </div>
+      </footer>
+   </div>
    <script src="/js/script.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"

@@ -1,19 +1,21 @@
 <div class="container"><div class="section1">
-    <div style="max-width: 500px;"><img
+
+    <div style="max-width: 500px;"><p class="main-title">SILVER</p><img
         style="max-height: 400px; height:100%"
         src="/images/logo1.png"
         alt="logo"
       />
-      <p class="main-title">SILVER</p>
+
     </div>
 
-    <div class="taskmaker container">
-      <form
-        class="taskmaker container"
-        style="background-color: transparent;"
-        action="/login"
-        method="POST"
-      >
+    <div class="formControl">
+      {{#if msg}}
+        <br />
+        <div class="alert alert-danger" role="alert">
+          {{msg}}
+        </div>
+      {{/if}}
+      <form action="/login" method="POST">
         <h3>Log In</h3>
         <div class="form">
           <div class="mb-3 container">
@@ -25,17 +27,14 @@
             <input type="password" class="form-control" name="password" />
           </div>
         </div>
-        <button style=" padding:15px 30px" class="myBtn" type="submit"><b>Log In</b></button>
+        <button
+          style=" padding:15px 30px; align-self:center"
+          class="myBtn"
+          type="submit"
+        ><b>Log In</b></button>
       </form>
       <h4>Create an account here</h4>
       <a class="myBtn" style=" padding:15px 25px" href="/signup"><u>Sign up</u></a>
 
     </div>
   </div></div>
-
-{{#if msg}}
-  <br />
-  <div class="alert alert-danger" role="alert">
-    {{msg}}
-  </div>
-{{/if}}
