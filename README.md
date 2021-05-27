@@ -1,7 +1,7 @@
 
-# KRONOS
+# Silver Tasker
 
-by Bernardo & Silvi
+by Silvi & Bernardo
 
 ________________________________________________________________________________
 ## Description
