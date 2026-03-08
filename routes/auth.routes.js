@@ -15,7 +15,7 @@ departments = [
   "FoodsBeverage",
   "Housekeeping",
   "Engineering",
-  "HumanRessources",
+  "HumanResources",
 ];
 let isTodo = false, isInProgres = false, isDone = false;
 

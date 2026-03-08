@@ -26,7 +26,7 @@ const authorizeInput = (req, res, next) => {
     res.render('index', { msg: 'please fill in all fields' })
   } else {
     next()
-    //res.redirect('/signup)
+    res.redirect('/signup')
   }
 }
 

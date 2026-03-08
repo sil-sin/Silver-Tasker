@@ -5,7 +5,7 @@ const TaskModel = require("../models/Task.model")
 const InfoGoals = require('../models/InfoGoals.model')
 
 
-let departments = ['FrontOffice', 'Administration', 'Sales', 'FoodsBeverage', 'Housekeeping', 'Engineering', 'HumanRessources']
+let departments = ['FrontOffice', 'Administration', 'Sales', 'FoodsBeverage', 'Housekeeping', 'Engineering', 'HumanResources']
 
 //CREATE NEW TASK 
 router.get('/new-task', (req, res) => {
@@ -14,7 +14,6 @@ router.get('/new-task', (req, res) => {
     res.redirect('/')
   }
   UserModel.find()
-    .populate('asignedTo')
     .then((data) => {
       if (!user && user.userType == "Manager") {
         res.redirect('/')

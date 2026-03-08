@@ -7,7 +7,7 @@ const taskSchema = new Schema({
 
   department: {
     type: String,
-    enum: ['FrontOffice', 'Administration', 'Sales', 'FoodsBeverage', 'Housekeeping', 'Engineering', 'HumanRessources']
+    enum: ['FrontOffice', 'Administration', 'Sales', 'FoodsBeverage', 'Housekeeping', 'Engineering', 'HumanResources']
   },
   status: {
     type: String,
@@ -15,7 +15,8 @@ const taskSchema = new Schema({
   },
   asignedTo: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    strictPopulate: false
   },
   asignedBy: {
     type: Schema.Types.ObjectId,

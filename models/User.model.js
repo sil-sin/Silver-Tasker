@@ -14,7 +14,7 @@ let userSchema = new Schema(
 
     department: {
       type: String,
-      enum: ['FrontOffice', 'Administration', 'Sales', 'FoodsBeverage', 'Housekeeping', 'Engineering', 'HumanRessources']
+      enum: ['FrontOffice', 'Administration', 'Sales', 'FoodsBeverage', 'Housekeeping', 'Engineering', 'HumanResources']
     },
 
     userType: {
